@@ -12,3 +12,5 @@
 ## 000-default.conf
 <img width="396" height="359" alt="image" src="https://github.com/user-attachments/assets/7c25018b-d7e8-4220-a34c-575ae1ed7ba7" />
 
+`<Directory /var/www/html/user/>`에 `DAV On`이 활성화되어있는 것을 확인할 수 있다. `Dav On`이란 원격으로 서버 파일을 임의로<br>
+읽고, 생성하고, 수정하고, 삭제할 수 있도록 지원하는 프로토콜이다 .
