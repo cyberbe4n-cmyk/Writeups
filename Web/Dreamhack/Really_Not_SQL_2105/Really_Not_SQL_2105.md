@@ -4,7 +4,7 @@
 # 목표
 문제를 통해 Flag 획득
 
-#코드 분석
+# 코드 분석
 ```.htaccess
 <Limit DELETE>
         Require all denied
