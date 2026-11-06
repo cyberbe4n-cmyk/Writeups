@@ -46,7 +46,7 @@ res = requests.put(URL, data=payload)
 <img width="560" height="69" alt="image" src="https://github.com/user-attachments/assets/e0b74cdc-c1a2-48b5-ad52-ffcf15f40b55" /><br>
 웹쉘이 정상적으로 들어간 것을 볼 수 있다.
 
-## 페이로드
+### 페이로드
 웹쉘로 `cat /flag`를 입력하면 `Flag`를 응답받을 수 있다.
 
 <img width="625" height="68" alt="image" src="https://github.com/user-attachments/assets/d2c90f5e-088f-4774-8722-f1493e5c0879" />
