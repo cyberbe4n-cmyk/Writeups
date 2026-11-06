@@ -6,6 +6,7 @@
 
 # 코드 분석
 먼저 `.htaccesss` 파일을 분석했다.
+
 <img width="233" height="60" alt="image" src="https://github.com/user-attachments/assets/df854bf2-4f24-479a-987c-a04d18457c07" />
 
 
