@@ -1,11 +1,11 @@
-# 문제 설명
+<img width="556" height="20" alt="image" src="https://github.com/user-attachments/assets/855d4a03-8eba-49ad-9216-ac4625eea1c0" /># 문제 설명
 <img width="224" height="112" alt="image" src="https://github.com/user-attachments/assets/82c28276-dbfe-4c23-9358-a50c592166cd" />
 
 # 목표
 문제를 통해 Flag 획득
 
 # 공격 표면 분석
-### 000-default.conf
+## 000-default.conf
 <img width="396" height="359" alt="image" src="https://github.com/user-attachments/assets/7c25018b-d7e8-4220-a34c-575ae1ed7ba7" />
 
 위 사진에서 `<Directory /var/www/html/user/>`에 `DAV On`이 활성화되어있는 것을 확인할 수 있다.<br>
