@@ -22,7 +22,7 @@ WebDAV를 이용하면 HTTP 기반으로 원격 파일 관리 작업을 수행�
 ```python
 import requests
 
-url = "http://host3.dreamhack.games:19563/user/admin.json"
+url = "http://host3.dreamhack.games:11749/user/admin.json"
 
 res = requests.options(url)
 
