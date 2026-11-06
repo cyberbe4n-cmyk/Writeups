@@ -50,4 +50,5 @@ res = requests.put(URL, data=payload)
 ```python
 cat /flag
 ```
+<img width="625" height="68" alt="image" src="https://github.com/user-attachments/assets/d2c90f5e-088f-4774-8722-f1493e5c0879" />
 
