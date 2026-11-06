@@ -1,4 +1,4 @@
-<img width="560" height="69" alt="image" src="https://github.com/user-attachments/assets/bb8acbce-c243-4553-b5f7-845cf27b1145" /># 문제 설명
+# 문제 설명
 <img width="224" height="112" alt="image" src="https://github.com/user-attachments/assets/82c28276-dbfe-4c23-9358-a50c592166cd" />
 
 # 목표
