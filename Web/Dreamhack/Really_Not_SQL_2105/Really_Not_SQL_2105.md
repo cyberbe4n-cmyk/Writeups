@@ -47,7 +47,7 @@ res = requests.put(URL, data=payload)
 웹쉘이 정상적으로 들어간 것을 볼 수 있다.
 
 ## 페이로드
-웹쉘로 
-```html
+```python
 cat /flag
 ```
+
