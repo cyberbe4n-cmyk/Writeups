@@ -9,25 +9,5 @@
 
 <img width="233" height="60" alt="image" src="https://github.com/user-attachments/assets/df854bf2-4f24-479a-987c-a04d18457c07" />
 
+<img width="396" height="359" alt="image" src="https://github.com/user-attachments/assets/7c25018b-d7e8-4220-a34c-575ae1ed7ba7" />
 
-```conf
-<VirtualHost *:80>
-  ServerAdmin webmaster@localhost
-	DocumentRoot /var/www/html
-
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-   <Directory /var/www/html/>
-     AllowOverride None
-     Require all granted
-   </Directory>
-
-  <Directory /var/www/html/user/>
-      DAV On
-      Options Indexes
-      AllowOverride All
-      Require all granted
-  </Directory>
-</VirtualHost>
-```
