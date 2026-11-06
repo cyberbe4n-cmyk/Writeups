@@ -29,4 +29,5 @@ res = requests.options(url)
 print("Allow method : ", res.headers.get("Allow"))
 ```
 
-<img width="556" height="20" alt="image" src="https://github.com/user-attachments/assets/46b4b13b-94cb-498b-b5c4-69b1b5033faa" />
+<img width="556" height="20" alt="image" src="https://github.com/user-attachments/assets/46b4b13b-94cb-498b-b5c4-69b1b5033faa" /><br>
+허용 메서드로 수많은 메서드가 포함되어 있으며 PUT 메서드 또한 허용되어 있으므로 임의로 파일을 수정하거나, 덮어씌울 수 있다
