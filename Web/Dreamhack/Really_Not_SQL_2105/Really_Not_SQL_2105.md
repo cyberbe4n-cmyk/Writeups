@@ -19,4 +19,14 @@
 
 <img width="454" height="134" alt="image" src="https://github.com/user-attachments/assets/b3c95bf5-aeea-46bc-8f35-5303cce75d64" /><br>
 
+```python
+import requests
+
+url = "http://host3.dreamhack.games:19563/user/admin.json"
+
+res = requests.options(url)
+
+print("Allow method : ", res.headers.get("Allow"))
+```
+
 <img width="556" height="20" alt="image" src="https://github.com/user-attachments/assets/46b4b13b-94cb-498b-b5c4-69b1b5033faa" />
