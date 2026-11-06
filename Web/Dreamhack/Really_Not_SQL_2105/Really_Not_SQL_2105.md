@@ -9,8 +9,8 @@
 <img width="396" height="359" alt="image" src="https://github.com/user-attachments/assets/7c25018b-d7e8-4220-a34c-575ae1ed7ba7" />
 
 위 사진에서 `<Directory /var/www/html/user/>`에 `DAV On`이 활성화되어있는 것을 확인할 수 있다.<br>
-`Dav On`이란 원격으로 서버 파일을 임의로
-읽고, 생성하고, 수정하고, 삭제할 수 있도록 지원하는 프로토콜이다 .
+`DAV On`은 Apache 서버의 해당 디렉터리에서 WebDAV 기능을 활성화하는 설정이다.<br>
+WebDAV를 이용하면 HTTP 기반으로 원격 파일 관리 작업을 수행할 수 있다.
 
 ## .htaccess
 
