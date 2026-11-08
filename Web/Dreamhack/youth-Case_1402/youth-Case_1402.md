@@ -35,3 +35,5 @@ module.exports = [
     }
 ]
 ```
+name이 "FLAG"이면 플래그를 획득한다.
+# 공격 표면 분석
