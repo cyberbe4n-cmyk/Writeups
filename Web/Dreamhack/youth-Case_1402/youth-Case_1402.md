@@ -11,3 +11,27 @@
 <img width="319" height="480" alt="image" src="https://github.com/user-attachments/assets/cc3012f9-fc1c-4d6b-963c-c674ee641152" /><br>
 `/shop`과 `/shop/` 경로로 오는 모든 요청을 거부한다.
 
+```js
+module.exports = [
+    {
+        "id": 1,
+        "name": "FLAG",
+        "description": "DH{fake_flag}"
+    },
+    {
+        "id": 2,
+        "name": "DRAG",
+        "description": "To pull something along forcefully, often on the ground or another surface, causing friction or resistance. It also refers to the delay in performance or response time."
+    },
+    {
+        "id": 3,
+        "name": "SLAG",
+        "description": "The waste material produced by the smelting process, which involves separating metal from its ore. Slag is typically a mixture of metal oxides and silicon dioxide."
+    },
+    {
+        "id": 4,
+        "name": "SWAG",
+        "description": "Refers to stylish confidence in one's appearance or demeanor. It can also mean promotional goods or items given away for free as a form of advertising."
+    }
+]
+```
