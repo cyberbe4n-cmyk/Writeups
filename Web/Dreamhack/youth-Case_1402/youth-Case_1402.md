@@ -37,7 +37,7 @@ module.exports = [
 ```
 name이 "FLAG"이면 플래그를 획득한다.
 # 공격 표면 분석
-## ngnix 프록시 우회 방법
+## nginx 프록시 우회 방법
 먼저 /shop으로 가는 모든 요청이 거부되므로, nginx 프록시부터 우회해야될 거 같다.
 ## docker-compose.yml
 <img width="458" height="229" alt="image" src="https://github.com/user-attachments/assets/e58baa69-2ee7-48bb-aea1-ee893495538b" /><br>
@@ -67,7 +67,7 @@ nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있
 Burp Suite에 Request-Hex에서 /shop뒤에 \xA0을 붙여 POST 요청을 보내주면 Access Denied가 뜨며, /shop 라우터에 성공적으로 요청을 보낸 것을 확인할 수 있다.<br>
 
 ## 서버 필터링 우회
-`ﬂ`유니코드 문자가 toLowerCase과정을 거치고도 `FL`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회했다.<br>
+`ﬂ`유니코드 문자가 소문자 변환 과정에서는 그대로 유지되지만, 대문자 변환 과정에서는 FL 아스키 문자로 확장되기 때문에 `ﬂ`이라는 문자로 우회했다.<br>
 <img width="1395" height="366" alt="image" src="https://github.com/user-attachments/assets/164ad1e8-91cf-40b0-9756-40de156343fc" /><br>
 # 결과
 <img width="649" height="206" alt="image" src="https://github.com/user-attachments/assets/baa4ed95-e5e1-4611-9c97-a484430e5009" /><br>
