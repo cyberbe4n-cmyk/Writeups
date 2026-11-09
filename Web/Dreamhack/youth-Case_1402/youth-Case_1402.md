@@ -47,15 +47,15 @@ nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있
 반면 백엔드는 내부적으로 `url.parse()`를 사용해 요청 경로를 파싱하는데, 이 함수는 레거시 호환성을 위해 NBSP(\xA0) 등 일부 공백류 문자를 경로 끝에서 자동으로 제거하는 특성이 있다.
 
 <img width="368" height="227" alt="image" src="https://github.com/user-attachments/assets/e0dba7e2-0614-4db2-affb-84b7ac715b75" /><br>
-참고 : https://hacktricks.wiki/pentesting-web/proxy-waf-protections-bypass.html
+참고 : https://hacktricks.wiki/pentesting-web/proxy-waf-protections-bypass.html<br>
 위 사진은 nginx 버전에 정규화 과정에서 제거되지 않는 문자들에 대한 표이다.
 위 문제는 nginx 1.22.0v 이므로 \xa0을 입력해서 우회할 수 있다.
 ## 서버 필터링 우회
 <img width="402" height="125" alt="image" src="https://github.com/user-attachments/assets/d6cde921-81f9-4408-b831-d6bc2c31847f" /><br>
 이제 위 조건문만 우회하면 된다. 서버는 leg 파라미터 값을 `req.body.leg.toLowerCase()` 코드를 사용해 모두 소문자로 변경하기 때문에 이 코드를 우회할 거다.
 
-<img width="311" height="700" alt="image" src="https://github.com/user-attachments/assets/8e69dbb3-32ac-408e-be0e-f14cee8b13d7" />
-참고 : https://dev.to/jagracey/hacking-github-s-auth-with-unicode-s-turkish-dotless-i-460n
+<img width="311" height="700" alt="image" src="https://github.com/user-attachments/assets/8e69dbb3-32ac-408e-be0e-f14cee8b13d7" /><br>
+참고 : https://dev.to/jagracey/hacking-github-s-auth-with-unicode-s-turkish-dotless-i-460n<br>
 위 사진은 `toUppercase` 또는 `toLowercase` 시 유니코드에 따라 아스키 문자를 리턴하는 데이터들이다.
 `ﬂ`이랑 똑같이 생긴 유니코드가 `Fl`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회할 수 있다.
 # 익스플로잇
