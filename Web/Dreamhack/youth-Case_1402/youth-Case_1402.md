@@ -56,8 +56,10 @@ nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있
 
 <img width="311" height="700" alt="image" src="https://github.com/user-attachments/assets/8e69dbb3-32ac-408e-be0e-f14cee8b13d7" /><br>
 참고 : https://dev.to/jagracey/hacking-github-s-auth-with-unicode-s-turkish-dotless-i-460n<br>
-위 사진은 `toUppercase` 또는 `toLowercase` 시 유니코드에 따라 아스키 문자를 리턴하는 데이터들이며
-이 방법을 사용해 우회할 수 있다.
+위 사진은 `.toUppercase()` 또는 `.toLowercase()` 시 유니코드에 따라 아스키 문자를 리턴하는 데이터들이며
+이 방법을 사용해 우회할 것이다.
+`ﬂ`는 이미 소문자 형태의 합자 문자라 `.toLowerCase()`를 거쳐도 그대로 ﬂag로 남는다. 따라서 'flag'와 문자열이 달라 1차 검열을 통과하고, 이후 search() 내부의 .toUpperCase()에서만 FLAG로 풀려 매칭된다.
+
 # 익스플로잇
 ## nginx 우회
 <img width="699" height="363" alt="image" src="https://github.com/user-attachments/assets/44fc2328-c3c5-4de5-9f0a-ad126fb7aca4" />
@@ -67,3 +69,5 @@ Burp Suite에 Request-Hex에서 /shop뒤에 \xA0을 붙여 POST 요청을 보내
 `ﬂ`유니코드 문자가 toLowerCase과정을 거치고도 `FL`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회했다.
 <img width="1395" height="366" alt="image" src="https://github.com/user-attachments/assets/164ad1e8-91cf-40b0-9756-40de156343fc" />
 # 결과
+<img width="649" height="206" alt="image" src="https://github.com/user-attachments/assets/baa4ed95-e5e1-4611-9c97-a484430e5009" /><br>
+###Flag : DH{5353d40122172ffff986d9720f1106b324ed67c78ecc497ba9d43f897eb41b7a}
