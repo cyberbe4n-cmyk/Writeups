@@ -65,6 +65,7 @@ nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있
 <img width="699" height="363" alt="image" src="https://github.com/user-attachments/assets/44fc2328-c3c5-4de5-9f0a-ad126fb7aca4" />
 <img width="1106" height="368" alt="image" src="https://github.com/user-attachments/assets/f1ad7d6b-d818-4d6b-b614-609cc28dbe18" /><br>
 Burp Suite에 Request-Hex에서 /shop뒤에 \xA0을 붙여 POST 요청을 보내주면 Access Denied가 뜨며, /shop 라우터에 성공적으로 요청을 보낸 것을 확인할 수 있다.<br>
+
 ## 서버 필터링 우회
 `ﬂ`유니코드 문자가 toLowerCase과정을 거치고도 `FL`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회했다.<br>
 <img width="1395" height="366" alt="image" src="https://github.com/user-attachments/assets/164ad1e8-91cf-40b0-9756-40de156343fc" /><br>
