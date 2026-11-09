@@ -41,14 +41,14 @@ ag.js는 검색 대상 데이터가 들어 있는 배열이고, 각 객체의 na
 먼저 /shop으로 가는 모든 요청이 거부되므로, nginx 프록시부터 우회해야될 거 같다.
 ## docker-compose.yml
 <img width="458" height="229" alt="image" src="https://github.com/user-attachments/assets/e58baa69-2ee7-48bb-aea1-ee893495538b" /><br>
-도커 파일에서 nginx의 버전`1.22.0`을 확인할 수 있으므로 적절한 우회법을 찾아 요청을 보낼 것이다.
+도커 파일에서 nginx의 버전 `1.22.0`을 확인할 수 있으므로 적절한 우회법을 찾아 요청을 보낼 것이다.
 
 nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있었다. 이 설정은 요청 URI를 바이트 단위로 완전히 일치하는 경우에만 차단하는 방식이다
 반면 백엔드는 내부적으로 `url.parse()`를 사용해 요청 경로를 파싱하는데, 이 함수는 레거시 호환성을 위해 NBSP(\xA0) 등 일부 공백류 문자를 경로 끝에서 자동으로 제거하는 특성이 있다.
 
 <img width="368" height="227" alt="image" src="https://github.com/user-attachments/assets/e0dba7e2-0614-4db2-affb-84b7ac715b75" /><br>
 참고 : https://hacktricks.wiki/pentesting-web/proxy-waf-protections-bypass.html<br>
-위 사진은 nginx 버전에 정규화 과정에서 제거되지 않는 문자들에 대한 표이다.
+위 사진은 nginx 버전별 정규화 과정에서 제거되지 않는 문자들에 대한 표이다.
 위 문제는 nginx 1.22.0v 이므로 \xa0을 입력해서 우회할 수 있다.
 ## 서버 필터링 우회 방법
 <img width="402" height="125" alt="image" src="https://github.com/user-attachments/assets/d6cde921-81f9-4408-b831-d6bc2c31847f" /><br>
