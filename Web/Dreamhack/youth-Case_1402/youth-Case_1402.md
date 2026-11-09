@@ -70,4 +70,4 @@ Burp Suite에 Request-Hex에서 /shop뒤에 \xA0을 붙여 POST 요청을 보내
 <img width="1395" height="366" alt="image" src="https://github.com/user-attachments/assets/164ad1e8-91cf-40b0-9756-40de156343fc" /><br>
 # 결과
 <img width="649" height="206" alt="image" src="https://github.com/user-attachments/assets/baa4ed95-e5e1-4611-9c97-a484430e5009" /><br>
-### Flag : DH{5353d40122172ffff986d9720f1106b324ed67c78ecc497ba9d43f897eb41b7a}
+## Flag : DH{5353d40122172ffff986d9720f1106b324ed67c78ecc497ba9d43f897eb41b7a}
