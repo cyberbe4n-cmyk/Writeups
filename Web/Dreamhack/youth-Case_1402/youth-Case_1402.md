@@ -62,7 +62,7 @@ nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있
 
 # 익스플로잇
 ## nginx 우회
-<img width="699" height="363" alt="image" src="https://github.com/user-attachments/assets/44fc2328-c3c5-4de5-9f0a-ad126fb7aca4" />
+<img width="699" height="363" alt="image" src="https://github.com/user-attachments/assets/44fc2328-c3c5-4de5-9f0a-ad126fb7aca4" /><br>
 <img width="1106" height="368" alt="image" src="https://github.com/user-attachments/assets/f1ad7d6b-d818-4d6b-b614-609cc28dbe18" /><br>
 Burp Suite에 Request-Hex에서 /shop뒤에 \xA0을 붙여 POST 요청을 보내주면 Access Denied가 뜨며, /shop 라우터에 성공적으로 요청을 보낸 것을 확인할 수 있다.<br>
 
