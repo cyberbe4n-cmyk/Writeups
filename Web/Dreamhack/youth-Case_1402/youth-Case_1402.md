@@ -60,9 +60,6 @@ nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있
 이 방법을 사용해 우회할 것이다.
 `ﬂ`는 이미 소문자 형태의 합자 문자라 `.toLowerCase()`를 거쳐도 그대로 ﬂag로 남는다. 따라서 'flag'와 문자열이 달라 1차 검열을 통과하고, 이후 search() 내부의 .toUpperCase()에서만 FLAG로 풀려 매칭된다.
 
-<summary>스포일러 보기 (클릭)</summary>
-
-
 # 익스플로잇
 ## nginx 우회
 <img width="699" height="363" alt="image" src="https://github.com/user-attachments/assets/44fc2328-c3c5-4de5-9f0a-ad126fb7aca4" />
