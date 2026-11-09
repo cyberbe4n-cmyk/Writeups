@@ -1,4 +1,4 @@
-# 문제 설명
+<img width="1106" height="368" alt="image" src="https://github.com/user-attachments/assets/544c768c-f436-487b-be27-f6ed20991b0d" /># 문제 설명
 <img width="365" height="146" alt="image" src="https://github.com/user-attachments/assets/f3dcae2e-eecc-464f-9129-cabd28177dde" /><br>
 ### 목표
 문제를 통해 **플래그(FLAG)** 획득<br>
@@ -37,7 +37,7 @@ module.exports = [
 ```
 name이 "FLAG"이면 플래그를 획득한다.
 # 공격 표면 분석
-## ngnix 프록시 우회
+## ngnix 프록시 우회 방법
 먼저 /shop으로 가는 모든 요청이 거부되므로, nginx 프록시부터 우회해야될 거 같다.
 ## docker-compose.yml
 <img width="458" height="229" alt="image" src="https://github.com/user-attachments/assets/e58baa69-2ee7-48bb-aea1-ee893495538b" /><br>
@@ -50,15 +50,21 @@ nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있
 참고 : https://hacktricks.wiki/pentesting-web/proxy-waf-protections-bypass.html<br>
 위 사진은 nginx 버전에 정규화 과정에서 제거되지 않는 문자들에 대한 표이다.
 위 문제는 nginx 1.22.0v 이므로 \xa0을 입력해서 우회할 수 있다.
-## 서버 필터링 우회
+## 서버 필터링 우회 방법
 <img width="402" height="125" alt="image" src="https://github.com/user-attachments/assets/d6cde921-81f9-4408-b831-d6bc2c31847f" /><br>
 이제 위 조건문만 우회하면 된다. 서버는 leg 파라미터 값을 `req.body.leg.toLowerCase()` 코드를 사용해 모두 소문자로 변경하기 때문에 이 코드를 우회할 거다.
 
 <img width="311" height="700" alt="image" src="https://github.com/user-attachments/assets/8e69dbb3-32ac-408e-be0e-f14cee8b13d7" /><br>
 참고 : https://dev.to/jagracey/hacking-github-s-auth-with-unicode-s-turkish-dotless-i-460n<br>
-위 사진은 `toUppercase` 또는 `toLowercase` 시 유니코드에 따라 아스키 문자를 리턴하는 데이터들이다.
+위 사진은 `toUppercase` 또는 `toLowercase` 시 유니코드에 따라 아스키 문자를 리턴하는 데이터들이며
+이 방법을 사용해 우회할 수 있다.
 `ﬂ`이랑 똑같이 생긴 유니코드가 `Fl`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회할 수 있다.
 # 익스플로잇
+## nginx 우회
 <img width="699" height="363" alt="image" src="https://github.com/user-attachments/assets/44fc2328-c3c5-4de5-9f0a-ad126fb7aca4" />
 <img width="1106" height="368" alt="image" src="https://github.com/user-attachments/assets/f1ad7d6b-d818-4d6b-b614-609cc28dbe18" /><br>
 Burp Suite에 Request-Hex에서 /shop뒤에 \xA0을 붙여 POST 요청을 보내주면 Access Denied가 뜨며, /shop 라우터에 성공적으로 요청을 보낸 것을 확인할 수 있다.
+## 서버 필터링 우회
+`ﬂ`유니코드 문자가 toLowerCase과정을 거치고도 `Fl`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회했다.
+<img width="1395" height="366" alt="image" src="https://github.com/user-attachments/assets/164ad1e8-91cf-40b0-9756-40de156343fc" />
+
