@@ -58,13 +58,12 @@ nginx는 `location = /shop { deny all; }` 로 `/shop` 경로를 차단하고 있
 참고 : https://dev.to/jagracey/hacking-github-s-auth-with-unicode-s-turkish-dotless-i-460n<br>
 위 사진은 `toUppercase` 또는 `toLowercase` 시 유니코드에 따라 아스키 문자를 리턴하는 데이터들이며
 이 방법을 사용해 우회할 수 있다.
-`ﬂ`이랑 똑같이 생긴 유니코드가 `Fl`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회할 수 있다.
 # 익스플로잇
 ## nginx 우회
 <img width="699" height="363" alt="image" src="https://github.com/user-attachments/assets/44fc2328-c3c5-4de5-9f0a-ad126fb7aca4" />
 <img width="1106" height="368" alt="image" src="https://github.com/user-attachments/assets/f1ad7d6b-d818-4d6b-b614-609cc28dbe18" /><br>
 Burp Suite에 Request-Hex에서 /shop뒤에 \xA0을 붙여 POST 요청을 보내주면 Access Denied가 뜨며, /shop 라우터에 성공적으로 요청을 보낸 것을 확인할 수 있다.
 ## 서버 필터링 우회
-`ﬂ`유니코드 문자가 toLowerCase과정을 거치고도 `Fl`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회했다.
+`ﬂ`유니코드 문자가 toLowerCase과정을 거치고도 `FL`이라는 아스키 문자를 리턴하기 때문에 `ﬂ`이라는 문자로 우회했다.
 <img width="1395" height="366" alt="image" src="https://github.com/user-attachments/assets/164ad1e8-91cf-40b0-9756-40de156343fc" />
-
+# 결과
