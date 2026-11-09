@@ -1,4 +1,4 @@
-<img width="1106" height="368" alt="image" src="https://github.com/user-attachments/assets/544c768c-f436-487b-be27-f6ed20991b0d" /># 문제 설명
+# 문제 설명
 <img width="365" height="146" alt="image" src="https://github.com/user-attachments/assets/f3dcae2e-eecc-464f-9129-cabd28177dde" /><br>
 ### 목표
 문제를 통해 **플래그(FLAG)** 획득<br>
