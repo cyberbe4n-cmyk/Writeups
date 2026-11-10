@@ -34,7 +34,18 @@ if (result.upw === req.body.upw) {
 ```js
 result.upw  // undefined
 ```
-그러면 조건식은 
+그러면 조건식은 아래와 같이 축소된다.
 ```js
 undefined === req.body.upw
 ```
+위 조건식이 `true`가 되려면 `req.body.upw`의 값도 `undefined`가 되여야한다.
+```js
+result.upw        // undefined (응답 JSON에 upw가 없어서)
+req.body.upw      // undefined (요청에 upw를 안 보내서)
+undefined === undefined   // true
+```
+조건이 참이 되어 `res.send('FLAG: ...')`가 실행된다.
+
+# 익스플로잇
+F12(관리자 도구)로 쉽게 요청을 보낼 수 있지만 보기 쉽게 Burp Suite 도구를 사용했다.<br>
+<img width="1187" height="401" alt="image" src="https://github.com/user-attachments/assets/ab93b866-21a3-49e5-8d5b-2da46e77acc8" /><br>
