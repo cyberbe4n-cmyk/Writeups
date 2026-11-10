@@ -19,6 +19,7 @@ app.post('/auth', function(req, res) {
     });
 });
 ```
-사용자가 입력한 uid 값을 검사하지 않고 CouchDB에서 그대로 사용되는 것을 확인할 수 있다.
+사용자가 입력한 uid 값을 검사하지 않고 CouchDB에서 그대로 사용되는 것을 확인할 수 있다.<br>
 
-# 공격 표면 분석
+CouchDB에는 다양한 문서가 존재하며 대표적으로는 `_all_docs` 같은 특수 문서가 있다.<br>
+참고 : https://docs.couchdb.org/en/stable/api/index.html
