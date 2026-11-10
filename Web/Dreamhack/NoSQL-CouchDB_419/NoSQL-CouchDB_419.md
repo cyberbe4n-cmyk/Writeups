@@ -30,3 +30,11 @@ if (result.upw === req.body.upw) {
 } else {
     res.send('fail');
 ```
+`_all_docs` 는 일반 사용자 계정 문서가 아니기 때문에 upw가 필요하지 않으며, JS에서 존재하지 않는 프로퍼티에 접근하면 에러가 아니라 undefined가 나온다.
+```js
+result.upw  // undefined
+```
+그러면 조건식은 
+```js
+undefined === req.body.upw
+```
