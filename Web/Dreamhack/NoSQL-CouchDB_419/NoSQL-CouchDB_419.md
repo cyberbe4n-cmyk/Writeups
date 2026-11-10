@@ -19,3 +19,4 @@ app.post('/auth', function(req, res) {
     });
 });
 ```
+사용자가 입력한 uid 값이 CouchDB에서 그대로 사용되는 것을 확인할 수 있다.
