@@ -6,7 +6,7 @@
 ```js
 app.post('/auth', function(req, res) {
     users.get(req.body.uid, function(err, result) {
-        if (err) { // err 값을 없앤다
+        if (err) {
             console.log(err); 
             res.send('error');
             return;
