@@ -21,7 +21,7 @@ app.post('/auth', function(req, res) {
 ```
 사용자가 입력한 uid 값이 CouchDB에서 그대로 사용되는 것을 확인할 수 있으며 여기에 대한 검증이 전혀 없다.<br>
 
-CouchDB에는 다양한 문서가 존재하며 대표적으로는 `_all_docs` 같은 특수 문서가 있다.<br>
+CouchDB에는 다양한 문서가 존재하며 대표적으로는 `_all_docs` 같은 DB레벨 시스템 API가 있다.<br>
 참고 : https://docs.couchdb.org/en/stable/api/index.html
 ## 인증 로직
 ```js
@@ -30,7 +30,8 @@ if (result.upw === req.body.upw) {
 } else {
     res.send('fail');
 ```
-`_all_docs` 는 일반 사용자 계정 문서가 아니기 때문에 upw가 필요하지 않으며, JS에서 존재하지 않는 프로퍼티에 접근하면 에러가 아니라 undefined가 나온다.
+`_all_docs` 는 "ID가 _all_docs인 문서를 조회"하는 게 아니라 DB의 전체 문서 목록을 반환하며 구조적으로 `upw` 필드가 필요하지 않다.<br>
+또한, JS에서 존재하지 않는 프로퍼티에 접근하면 에러가 아니라 undefined가 나온다.
 ```js
 result.upw  // undefined
 ```
