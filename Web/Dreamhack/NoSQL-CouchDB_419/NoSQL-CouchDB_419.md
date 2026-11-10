@@ -49,3 +49,5 @@ undefined === undefined   // true
 # 익스플로잇
 F12(관리자 도구)로 쉽게 요청을 보낼 수 있지만 보기 쉽게 Burp Suite 도구를 사용했다.<br>
 <img width="1187" height="401" alt="image" src="https://github.com/user-attachments/assets/ab93b866-21a3-49e5-8d5b-2da46e77acc8" /><br>
+### 결과 
+Flag : DH{f350aad835d053891385b1bb9cfbc1c318ab29f0}
